@@ -59,6 +59,18 @@ Responses are sent to the study Google Sheet managed by the research team:
 
 The spreadsheet should only be accessible to authorized members of the research team. Follow the study's approved privacy, retention, and data-handling procedures.
 
+## What Google Apps Script does
+
+Google Apps Script is the small server-side program between the website and the Google Sheet. When a participant enters a code, it checks whether the code is assigned and which condition to show. When a participant submits a reply, it checks the session and condition, then writes the response to the appropriate sheet tab. It also prevents duplicate turn submissions and records the continue/end choice.
+
+The website does not connect directly to the spreadsheet. Apps Script performs the spreadsheet operations using the research team's Google account. The spreadsheet stores the data; Apps Script handles the requests and study rules.
+
+### Why this setup instead of a dedicated database?
+
+For a small study or pilot, Google Sheets is convenient for a research team that already uses Google Workspace: it is straightforward to review and export, and it does not require a separate database service and its administration. Apps Script provides a lightweight way to connect the participant website to that spreadsheet.
+
+Google Sheets is not a full database, and Apps Script is not a substitute for one. This setup has service quotas and is less suited to large numbers of simultaneous users, complex queries, strict access-control requirements, or sensitive data needing stronger safeguards. Participant codes act as access codes, not as strong authentication. If the study needs those capabilities or grows substantially, the team should consider a dedicated backend and database with appropriate authentication, access controls, backups, and monitoring.
+
 ## Participant codes and resuming a chat
 
 Each real participant code is assigned a condition and can be used to start one study session. Participants can reload and resume that session in the same browser on the same device, using the site's **Resume saved chat** option. The browser stores session progress locally to support this. Clearing browser data or switching devices can remove access to the saved session; a researcher may need to assist.
@@ -69,9 +81,6 @@ The special code `TEST7785` is reserved for researcher testing. It alternates be
 
 - Provide each participant with their assigned code and the correct study information before they begin.
 - Confirm the final questionnaire link is available to participants.
-- Review the Google Sheet to confirm responses are arriving.
-- Use `TEST7785` for repeatable testing; avoid using real participant codes for tests.
-- Contact the research team if a participant cannot resume their saved session or encounters an error.
 - Review the Google Sheet to confirm responses are arriving.
 - Use `TEST7785` for repeatable testing; avoid using real participant codes for tests.
 - Contact the research team if a participant cannot resume their saved session or encounters an error.
