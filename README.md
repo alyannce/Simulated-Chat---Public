@@ -32,6 +32,23 @@ The study spreadsheet records:
 
 One row is stored per answered turn. The continue/end choice is recorded with the fifth-turn response. The site does not ask participants for their name, but responses are associated with their participant code. A free-text mood response could include personal information, so participants should only share what they are comfortable sharing.
 
+### Spreadsheet fields
+
+| Column | Description |
+| --- | --- |
+| `participant_id` | Assigned code entered by the participant |
+| `condition` | `consistent` or `fluctuating` |
+| `trial` | Turn number (1 to 6) |
+| `partner_message` | Alex's scripted message |
+| `selected_option_number` | Selected reply (1 or 2) |
+| `selected_reply` | Text of the selected reply |
+| `message_shown_at_ms` | Browser timestamp when Alex's message appeared |
+| `choice_at` | ISO timestamp of the participant's reply |
+| `response_latency_ms` | Time from message shown to reply |
+| `session_started_at` | ISO timestamp when the session began |
+| `mood_response` | Short answer entered before the chat |
+| `conversation_decision` | `continue` or `end`, recorded on the Turn 5 row |
+
 ## Where the data goes
 
 Responses are sent to the study Google Sheet managed by the research team:
@@ -52,6 +69,9 @@ The special code `TEST7785` is reserved for researcher testing. It alternates be
 
 - Provide each participant with their assigned code and the correct study information before they begin.
 - Confirm the final questionnaire link is available to participants.
+- Review the Google Sheet to confirm responses are arriving.
+- Use `TEST7785` for repeatable testing; avoid using real participant codes for tests.
+- Contact the research team if a participant cannot resume their saved session or encounters an error.
 - Review the Google Sheet to confirm responses are arriving.
 - Use `TEST7785` for repeatable testing; avoid using real participant codes for tests.
 - Contact the research team if a participant cannot resume their saved session or encounters an error.
