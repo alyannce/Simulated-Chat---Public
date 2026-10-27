@@ -2,22 +2,25 @@
 
 ## What the site does
 
-The site guides participants through a scripted conversation with Alex. Participants imagine they are getting to know someone and choose the reply they would be most likely to send.
+The site guides participants through a scripted conversation with an unnamed chat partner. Participants imagine they are getting to know someone and choose the reply they would be most likely to send.
 
-There are two versions of Alex's scripted responses:
+There are two versions of the chat partner's scripted responses:
 
 - **Consistent positive feedback**
 - **Fluctuating positive feedback**
 
-The participant's assigned code determines which version they see. Their selected reply does not change Alex's next scripted message.
+The participant's assigned code determines which version they see. Their selected reply does not change the chat partner's next scripted message.
 
 ## What participants do
 
-1. Enter their assigned participant code.
-2. Answer a short question about their current mood.
-3. Read Alex's messages and choose one of two replies at each turn.
-4. After the fifth reply, choose whether to continue or end the conversation. Continuing shows one final turn; ending skips it.
-5. Continue to the questionnaire using the link provided by the research team.
+1. Enter their assigned participant code and answer a short question about their current mood.
+2. Select **Check code**. The site verifies the participant code and determines the assigned chat condition.
+3. Read **Before you begin**. The **Start chat** button becomes clickable after a five-second countdown.
+4. Read the chat partner's messages and choose one of two replies at each turn.
+5. After the fifth reply, choose whether to continue or end the conversation. Continuing shows one final turn; ending skips it.
+6. Continue to the questionnaire selected for the assigned condition: the **Consistent** group receives [this Google Form](https://forms.gle/5ADpTyamzHN1uzCz9), and the **Fluctuating** group receives [this Google Form](https://forms.gle/WsqGGbB87PRuKuFZA).
+
+The participant code field shows `e.g., A1B2C3` as a format example only; participants must enter the code assigned to them by the research team. The chat partner is shown with a generic blank profile icon and no displayed name. Chat messages appear in rounded bubbles with tails. Reply choices appear one second after each chat partner message.
 
 ## What information is collected
 
@@ -39,10 +42,10 @@ One row is stored per answered turn. The continue/end choice is recorded with th
 | `participant_id` | Assigned code entered by the participant |
 | `condition` | `consistent` or `fluctuating` |
 | `trial` | Turn number (1 to 6) |
-| `partner_message` | Alex's scripted message |
+| `partner_message` | Chat partner's scripted message |
 | `selected_option_number` | Selected reply (1 or 2) |
 | `selected_reply` | Text of the selected reply |
-| `message_shown_at_ms` | Browser timestamp when Alex's message appeared |
+| `message_shown_at_ms` | Browser timestamp when the chat partner's message appeared |
 | `choice_at` | ISO timestamp of the participant's reply |
 | `response_latency_ms` | Time from message shown to reply |
 | `session_started_at` | ISO timestamp when the session began |
@@ -80,7 +83,7 @@ The special code `TEST7785` is reserved for researcher testing. It alternates be
 ## Research team notes
 
 - Provide each participant with their assigned code and the correct study information before they begin.
-- Confirm the final questionnaire link is available to participants.
+- Confirm both condition-specific questionnaire links are the intended final forms and accessible to participants.
 - Review the Google Sheet to confirm responses are arriving.
 - Use `TEST7785` for repeatable testing; avoid using real participant codes for tests.
 - Contact the research team if a participant cannot resume their saved session or encounters an error.
