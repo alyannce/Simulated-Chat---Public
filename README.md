@@ -72,8 +72,6 @@ The website does not connect directly to the spreadsheet. Apps Script performs t
 
 For a small study or pilot, Google Sheets is convenient for a research team that already uses Google Workspace: it is straightforward to review and export, and it does not require a separate database service and its administration. Apps Script provides a lightweight way to connect the participant website to that spreadsheet.
 
-Google Sheets is not a full database, and Apps Script is not a substitute for one. This setup has service quotas and is less suited to large numbers of simultaneous users, complex queries, strict access-control requirements, or sensitive data needing stronger safeguards. Participant codes act as access codes, not as strong authentication. If the study needs those capabilities or grows substantially, the team should consider a dedicated backend and database with appropriate authentication, access controls, backups, and monitoring.
-
 ## Participant codes and resuming a chat
 
 Each real participant code is assigned a condition and can be used to start one study session. Participants can reload and resume that session in the same browser on the same device, using the site's **Resume saved chat** option. The browser stores session progress locally to support this. Clearing browser data or switching devices can remove access to the saved session; a researcher may need to assist.
